@@ -87,6 +87,8 @@ namespace McpCalculator.Core
         [McpServerTool]
         public partial double Add(double a, double b)
         {
+            //ugly but it works
+			////System.Diagnostics.Debugger.Launch();
             _rateLimiter.CheckRateLimit(nameof(Add));
 
             ValidateNumber(a, nameof(a));
