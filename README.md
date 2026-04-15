@@ -134,6 +134,23 @@ dotnet test
      -d '{"a": 5, "b": 3}'
    ```
 
+### Option 3: Local MCP Server (LM Studio)
+1. Configure LM Studio to use the stdio server:
+   - Open LM Studio 
+   - On the right sidebar under Integrations, click "+ Install" | Edit mcp.json
+```json
+{
+  "mcpServers": {
+    "BasicCalculator": {
+      "command": "C:\\path\\to\\McpCalculator\\bin\\Release\\net10.0\\McpCalculator.exe",
+      "args": []
+    }
+  }
+}
+```   
+It should load the MCP server and it will list the available tools. You can then use the tools in your conversations by typing for example `@BasicCalculator add 345 and 456`.
+It will show you the arguments it is sending to the MCP server and the response it gets back. Very useful for testing and debugging your MCP server implementation.
+
 ## Configuration
 
 ### Configuration Sources (in order of precedence)
